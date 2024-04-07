@@ -1,20 +1,17 @@
 #!/usr/bin/env python3
 import sys
 import time
+import math
 
 
 def factor(n):
 
-    if (n == 1):
+    if (n < 2):
         return False
-
     is_prime = True
-    for d in range(2, n):
-        if not (n % d == 0):
-            continue
-        else:
-            q = n // d
-            print("{}={}*{}".format(n, q, d))
+    for d in range(2,int(math.sqrt(n) + 1) ):
+        if (n % d == 0):
+            print("{}={}*{}".format(n, n // d, d))
             break
 
     return is_prime
