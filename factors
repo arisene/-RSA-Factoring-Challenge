@@ -2,11 +2,12 @@
 import sys
 import time
 
+
 def factor(n):
 
     if (n == 1):
         return False
-    
+
     is_prime = True
     for d in range(2, n):
         if not (n % d == 0):
@@ -15,10 +16,12 @@ def factor(n):
             q = n // d
             print("{}={}*{}".format(n, q, d))
             break
-    
+
     return is_prime
 
+
 def main(file_path):
+
     start_time = time.time()
     with open(file_path, 'r') as file:
         for line in file:
@@ -29,7 +32,7 @@ def main(file_path):
     print("\nreal\t%.3fs" % (end_time - start_time))
     print("user\t%.3fs" % (end_time - start_time))
     print("sys\t%.3fs" % (end_time - start_time))
-    
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
